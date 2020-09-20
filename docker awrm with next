@@ -1,10 +1,10 @@
-Download and enable docker
-#yum install docker -y && systemctl enable docker & systemctl start docker
-Initialise Docker swarm
-#docker swarm init
-Check your manager
-#docker node ls
-install docker visualizer
-#docker run -it -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock dockersamples/visualizer
-to create replicas
-#docker service create --replicas 3 --name nextc --update-delay 30s -p 80:80-d nextcloud
+#Download and enable docker
+yum install docker -y && systemctl enable docker & systemctl start docker
+#Initialise Docker swarm
+docker swarm init
+#Check your manager
+docker node ls
+#install docker visualizer
+docker run -it -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock dockersamples/visualizer
+#to create replicas
+docker service create --replicas 3 --name nextc --update-delay 30s -p 80:80-d nextcloud
